@@ -1,0 +1,88 @@
+/* Register Page */
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+}
+
+.form-container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+
+/* Label Styling */
+.form-label {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+  width: 100%;
+}
+
+/* Input Fields */
+.input-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.form-control {
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #2575fc;
+  outline: none;
+  box-shadow: 0 0 8px rgba(37, 117, 252, 0.3);
+}
+
+/* Button Styling */
+.btn {
+  padding: 14px;
+  background-color: #2575fc;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #6a11cb;
+}
+
+/* Login Link */
+.login-link {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.login-link a {
+  color: #2575fc;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
