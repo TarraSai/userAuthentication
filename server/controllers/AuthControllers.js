@@ -73,7 +73,35 @@ const token = TokenGenarate(userEisting)
     res.status(500).json({ error: "Server error" });
   }
 }
+const googleAuth = async (req, res) => {
+  const {email,displayName,photoURL}=req.body
+  console.log(photoURL)
+
+  try {
+    const userExisting = await userdata.findOne({ email });
+    if (userExisting) {
+      
+      const token = TokenGenarate(userExisting);
+    
+     return res.status(200).json({ message: "Login successful", token: token });
+    }
+    const hashpassword=await bcrypt.hash(email,10)
+    const newuser = new userdata({
+      name: displayName.toLowerCase().replace(" ", "")+Math.floor(Math.random()*1000),
+      email,
+      password: hashpassword,
+      photo:photoURL,
+    });
+    
+    await newuser.save();
+    const token = TokenGenarate(newuser);
+    res.status(200).json({ message: "Login successful", token: token });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Server error" });
+  }
+}
 
 module.exports={
-    register,login
+    register,login,googleAuth
 }

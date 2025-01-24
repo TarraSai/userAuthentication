@@ -15,6 +15,7 @@ function Profile() {
     } else {
       try {
         const tokendata = jwtDecode(token);
+        console.log("Token data:", tokendata);
         setUserData(tokendata);
       } catch (error) {
         console.error("Error decoding token:", error);
@@ -34,7 +35,7 @@ function Profile() {
       <div className="profile-card">
         <div className="profile-header">
           <img
-            src={userData.avatar || "https://via.placeholder.com/150"}
+            src={userData.photo|| "https://cdn.pixabay.com/photo/2019/08/11/18/59/icon-4399701_1280.png"}
             alt="Profile Avatar"
             className="profile-avatar"
           />

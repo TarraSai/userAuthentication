@@ -4,9 +4,10 @@ const TokenGenarate=(userData)=>{
     const playload={
         _id:userData._id,
         email:userData.email,
-        name:userData.name
+        name:userData.name,
+        photo:userData.photo,
     }
-    console.log(playload)
+    
     return jwt.sign(playload, process.env.My_code,{expiresIn:'24h'} );
 }
 const verifyToken = (req, res, next) => {

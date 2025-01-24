@@ -4,6 +4,7 @@ import './css/Login.css'
 import { useNavigate } from 'react-router-dom';
 import { ShowSucess, ShowError } from './Toastify'
 import { ToastContainer } from 'react-toastify';
+import GoogleAuth from './GoogleAuth';
 
 function Login() {
   const navigate = useNavigate();
@@ -68,9 +69,11 @@ function Login() {
             />
           </div>
           <button type="submit" className="btn btn-primary w-100">Login</button>
+          <GoogleAuth/>
           <div className="register-link text-center mt-3">
             Don’t have an account? <a href="/register">Register here</a>
           </div>
+
         </form>
         <ToastContainer />
       </div>
